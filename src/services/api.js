@@ -1,9 +1,9 @@
 import axios from 'axios'
 
-const isDev = import.meta.env.DEV || window.location.port === '5173'
+const baseURL = import.meta.env.VITE_API_BASE_URL || '/api'
 
 const api = axios.create({
-  baseURL: isDev ? '/api' : 'http://localhost:3786/api',
+  baseURL,
   headers: {
     'Content-Type': 'application/json'
   }
