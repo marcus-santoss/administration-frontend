@@ -17,6 +17,6 @@ FROM nginx:1.27-alpine
 COPY default.conf.template /etc/nginx/templates/default.conf.template
 COPY --from=build /app/dist /usr/share/nginx/html
 
-EXPOSE 80
+EXPOSE 5173
 
 CMD ["nginx", "-g", "daemon off;"]
